@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 7ca2602fa5792d745af8270f0db021a7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9199390469711406771
+    second: Afterbit sin fondo_0
+  - first:
+      213: -5631668589688702369
+    second: Afterbit sin fondo_1
+  - first:
+      213: -3926100604660006461
+    second: Afterbit sin fondo_2
+  - first:
+      213: 6248855133847181279
+    second: Afterbit sin fondo_3
+  - first:
+      213: 1556436971776607934
+    second: Afterbit sin fondo_4
+  - first:
+      213: -2674342546958441497
+    second: Afterbit sin fondo_5
+  - first:
+      213: -8193487621702982746
+    second: Afterbit sin fondo_6
+  - first:
+      213: 6806856501910937509
+    second: Afterbit sin fondo_7
+  - first:
+      213: -5243530859501563148
+    second: Afterbit sin fondo_8
+  - first:
+      213: -491466589533091112
+    second: Afterbit sin fondo_9
+  - first:
+      213: -1579474893050794998
+    second: Afterbit sin fondo_10
+  - first:
+      213: 8324544374774573303
+    second: Afterbit sin fondo_11
+  - first:
+      213: 7003180461611764919
+    second: Afterbit sin fondo_12
+  - first:
+      213: 5991520483750486871
+    second: Afterbit sin fondo_13
+  - first:
+      213: 4383401939741165749
+    second: Afterbit sin fondo_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Afterbit sin fondo_0
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 542
+        width: 352
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b6234944eccaaf70800000000000000
+      internalID: 9199390469711406771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Afterbit sin fondo_1
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 538
+        width: 289
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5a31ea614b48d1b0800000000000000
+      internalID: -5631668589688702369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Afterbit sin fondo_2
+      rect:
+        serializedVersion: 2
+        x: 1412
+        y: 787
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c14bca2d40b389c0800000000000000
+      internalID: -3926100604660006461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Afterbit sin fondo_3
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 710
+        width: 63
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd756d9e2a468b650800000000000000
+      internalID: 6248855133847181279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Afterbit sin fondo_4
+      rect:
+        serializedVersion: 2
+        x: 1490
+        y: 664
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb68702fd23999510800000000000000
+      internalID: 1556436971776607934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Afterbit sin fondo_5
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 571
+        width: 51
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e324d07f93d2ead0800000000000000
+      internalID: -2674342546958441497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Afterbit sin fondo_6
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 616
+        width: 54
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a365d44b62ea4e80800000000000000
+      internalID: -8193487621702982746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Afterbit sin fondo_7
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 315
+        width: 127
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5af95799cefc67e50800000000000000
+      internalID: 6806856501910937509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Afterbit sin fondo_8
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 313
+        width: 95
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f25c96f67c3b37b0800000000000000
+      internalID: -5243530859501563148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Afterbit sin fondo_9
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 312
+        width: 162
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8da48ef9db5fd29f0800000000000000
+      internalID: -491466589533091112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Afterbit sin fondo_10
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 314
+        width: 81
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0c2f0404f3941ae0800000000000000
+      internalID: -1579474893050794998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Afterbit sin fondo_11
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 315
+        width: 137
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f82a67e009b68370800000000000000
+      internalID: 8324544374774573303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Afterbit sin fondo_12
+      rect:
+        serializedVersion: 2
+        x: 1123
+        y: 311
+        width: 107
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bc4350868b403160800000000000000
+      internalID: 7003180461611764919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Afterbit sin fondo_13
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 310
+        width: 46
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 753ac62b228262350800000000000000
+      internalID: 5991520483750486871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Afterbit sin fondo_14
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 310
+        width: 152
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b8c70607d8f4dc30800000000000000
+      internalID: 4383401939741165749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Afterbit sin fondo_0: 9199390469711406771
+      Afterbit sin fondo_1: -5631668589688702369
+      Afterbit sin fondo_10: -1579474893050794998
+      Afterbit sin fondo_11: 8324544374774573303
+      Afterbit sin fondo_12: 7003180461611764919
+      Afterbit sin fondo_13: 5991520483750486871
+      Afterbit sin fondo_14: 4383401939741165749
+      Afterbit sin fondo_2: -3926100604660006461
+      Afterbit sin fondo_3: 6248855133847181279
+      Afterbit sin fondo_4: 1556436971776607934
+      Afterbit sin fondo_5: -2674342546958441497
+      Afterbit sin fondo_6: -8193487621702982746
+      Afterbit sin fondo_7: 6806856501910937509
+      Afterbit sin fondo_8: -5243530859501563148
+      Afterbit sin fondo_9: -491466589533091112
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
