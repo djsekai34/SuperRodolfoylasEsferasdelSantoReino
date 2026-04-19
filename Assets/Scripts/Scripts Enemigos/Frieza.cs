@@ -137,38 +137,89 @@ public class Frieza : MonoBehaviour
 
     IEnumerator EfectoEstatua()
     {
-
-        // Esperamos un frame para que el animator sepa que hemos pasado de andar o atacar a morir
-        yield return null;
-
-        // Calculamos el tiempo que dura la animacion de la muerte
-        float duracionReal = anim.GetCurrentAnimatorStateInfo(0).length;
-
-        // Calculamos la animacion con el tiempo que le hemos puesto
-        float tiempoEspera = duracionReal / anim.speed;
-
-        //Esperamos el 70% de la animacion
-        yield return new WaitForSeconds(tiempoEspera * 0.70f);
-
-        // Congelamos la animacion
-        anim.speed = 0;
-
-        //Desactivamos el collider para que lo atravesemos
+        // Verificación de componentes por seguridad para que no falte ninguno
+        Animator anim = GetComponentInChildren<Animator>();
+        SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
         Collider2D col = GetComponent<Collider2D>();
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+
+        // Si no tenemos el animador o el sprite lo cancelamos para evitar errores
+        if (anim == null || sr == null) yield break;
+
+        // Por defecto decimos que esta a un metro pero lazamos un raycast hacia abajo
+        float distanciaAlSueloFinal = 1f;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 15f, LayerMask.GetMask("Ground"));
+        // Si el rayo que lanzamos toca el suelo lo guardamos para que el cuerpo caiga perfecto
+        if (hit.collider != null) distanciaAlSueloFinal = hit.distance;
+
+        // Guardamos la posicion del sprite antes de morir
+        Vector3 posOriginalHijo = sr.transform.localPosition;
+
+        // En margen F3 es para cuando se quede de rodillas para que este un poco mas alto
+        float margenF3 = 0.68f;
+        Vector3 posSueloF3 = posOriginalHijo - new Vector3(0, distanciaAlSueloFinal - margenF3, 0);
+
+        // El margen F4 es para cuando ya este en el suelo
+        float margenF4 = 0.2f;
+        Vector3 posFinalSueloF4 = posOriginalHijo - new Vector3(0, distanciaAlSueloFinal - margenF4, 0);
+
+        // Frenamos todo para controlarlo nosotros
+        anim.speed = 0;
+        string nombreAnimMuere = "MuerteFrieza";
+        float tiempo = 0;
+        float duracionTotal = 2.0f;
+
+        while (tiempo < duracionTotal)
+        {
+            tiempo += Time.deltaTime;
+            float progreso = tiempo / duracionTotal;
+
+            // Lo primeros segundos se queda donde estaba
+            if (progreso < 0.70f)
+            {
+                sr.transform.localPosition = posOriginalHijo;
+            }
+            else
+            {
+                // En el ultimo 30% del tiempo restante d ela animacion calculamos la bajada del sprite 
+                float pBajada = (progreso - 0.70f) / 0.30f;
+                float pSuave = Mathf.SmoothStep(0, 1, pBajada);
+                sr.transform.localPosition = Vector3.Lerp(posOriginalHijo, posSueloF3, pSuave);
+            }
+
+            // Lo volvemos transparente poco a poco
+            sr.color = Color.Lerp(new Color(1, 1, 1, 1), new Color(1, 1, 1, 0.8f), progreso);
+
+            // Sincronizamos la animacion para que avance hasta el 75% de este
+            anim.Play(nombreAnimMuere, 0, progreso * 0.75f);
+            yield return null;
+        }
+
+        // Lo dejamos congelado medio segundo
+        yield return new WaitForSeconds(0.5f);
+
+        // Bajamos el sprite a su posicion final en el suelo y se vuelve un poco mas transparente
+        sr.transform.localPosition = posFinalSueloF4;
+        sr.color = new Color(1, 1, 1, 0.6f);
+        // Ponemos la animacion en su ultimo frame
+        anim.Play(nombreAnimMuere, 0, 1f);
+
+        // Le quitamos su collider para que Rodolfo lo atraviese
         if (col != null) col.enabled = false;
 
-        // Desactivamos la simulación física por completo, lo frenamo, dejamos de empujarlo y dejamos de leer al objeto
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        // Resteamos las fisicas para que no se muevan y no consuma recursos
         if (rb != null)
         {
             rb.linearVelocity = Vector2.zero;
-            rb.bodyType = RigidbodyType2D.Kinematic; 
-            rb.simulated = false; 
+            rb.bodyType = RigidbodyType2D.Kinematic;
+            rb.simulated = false;
         }
 
-        // Hacemos a freezer transparente
-        SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
-        if (sr != null) sr.color = new Color(1, 1, 1, 0.6f);
+        // Hacemos una pequeña pausa para que se vea bien el cuerpo
+        yield return new WaitForSeconds(0.5f);
 
+        // Lo dejamos todo congelado
+        anim.speed = 0;
+        sr.transform.localPosition = posFinalSueloF4;
     }
 }

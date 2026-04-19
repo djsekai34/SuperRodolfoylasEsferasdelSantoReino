@@ -1,19 +1,19 @@
 using System.Collections;
 using UnityEngine;
 
-public class AtaqueBroly : MonoBehaviour
+public class AtaqueTurles : MonoBehaviour
 {
     private Animator anim;
-    private GameObject bolaBroly;
+    private GameObject bolaTurles;
     private Vector3 posicionOriginalBola;
     private Transform padreOriginalBola;
 
     [Header("Configuración Animación")]
-    public string nombreAnimacion = "AtaqueMenuPrincipalBroly";
+    public string nombreAnimacion = "TurlesMP";
     public string estadoIdle = "Idle";
 
     [Header("Ajustes del Proyectil")]
-    public float velocidadIzquierda = 50f;
+    public float velocidadDerecha = 50f;
     public float tiempoVida = 1.8f;
 
     private bool disparada = false;
@@ -22,23 +22,23 @@ public class AtaqueBroly : MonoBehaviour
     {
         anim = GetComponent<Animator>();
 
-        //Buscamos la bola de broly que es su hijo
+        //Buscamos la bola de turles que es su hijo
         foreach (Transform hijo in transform)
         {
-            // Si encontramos a un hijo que tenga puesto el Tag "BrolyMenuPrincipal" hacemos lo que hay dentro del if
-            if (hijo.CompareTag("BrolyMenuPrincipal"))
+            // Si encontramos a un hijo que tenga puesto el Tag "BolaTurlesMenuPrincipal" hacemos lo que hay dentro del if
+            if (hijo.CompareTag("BolaTurlesMenuPrincipal"))
             {
                 //Lo guardamos en una variable
-                bolaBroly = hijo.gameObject;
+                bolaTurles = hijo.gameObject;
                 // Guardamos quien es el padre y esto sirve para que cuando disparemos sea a quien tiene que volver
                 padreOriginalBola = transform;
                 // Si lo encontramos, paramos el bucle.
-                posicionOriginalBola = bolaBroly.transform.localPosition;
+                posicionOriginalBola = bolaTurles.transform.localPosition;
                 break;
             }
         }
         //Si por alguna casualidad nos dejamos la bola encendida de primeras, la apagamos para que no se vea
-        if (bolaBroly != null) bolaBroly.SetActive(false);
+        if (bolaTurles != null) bolaTurles.SetActive(false);
 
         //Si existe el animator empezamos la corrutina
         if (anim != null)
@@ -57,12 +57,12 @@ public class AtaqueBroly : MonoBehaviour
             anim.speed = 1;
             anim.Play(estadoIdle);
 
-            //Si la bola de broly existe, la escondemos, despues la metemos dentro de su padre para que se mueva con el y por ultimo le hacemos tp a su mano usando una copia que guardamos en el start
-            if (bolaBroly != null)
+            //Si la bola de turles existe, la escondemos, despues la metemos dentro de su padre para que se mueva con el y por ultimo le hacemos tp a su mano usando una copia que guardamos en el start
+            if (bolaTurles != null)
             {
-                bolaBroly.SetActive(false);
-                bolaBroly.transform.SetParent(padreOriginalBola);
-                bolaBroly.transform.localPosition = posicionOriginalBola;
+                bolaTurles.SetActive(false);
+                bolaTurles.transform.SetParent(padreOriginalBola);
+                bolaTurles.transform.localPosition = posicionOriginalBola;
             }
 
             // Pausa de 1s en el idle
@@ -78,30 +78,33 @@ public class AtaqueBroly : MonoBehaviour
             //Esperamos a que llege al final
             yield return new WaitForSeconds(duracion);
 
-            // Congelamos ma broly en su ultima posicion
+            // Congelamos a turles en su ultima posicion
             anim.speed = 0;
 
-            if (bolaBroly != null)
+            if (bolaTurles != null)
             {
-                //Sacamos la bola de broly y la hacemos hijas del canvas, para que esta viaje por donde quiera sin que le afecte su padre
-                bolaBroly.transform.SetParent(transform.parent);
+                //Sacamos la bola de turles y la hacemos hijas del canvas, para que esta viaje por donde quiera sin que le afecte su padre
+                bolaTurles.transform.SetParent(transform.parent);
                 //La mostramos y esta delante de todas las imagenes y la activamos en el update
-                bolaBroly.SetActive(true);
-                bolaBroly.transform.SetAsLastSibling();
+                bolaTurles.SetActive(true);
+                bolaTurles.transform.SetAsLastSibling();
                 disparada = true;
 
                 // Nos esperamos el tiempo que hayamos puesto
                 yield return new WaitForSeconds(tiempoVida);
+
+                // Apagamos la bola para que no se quede volando eternamente
+                bolaTurles.SetActive(false);
             }
         }
     }
 
     void Update()
     {
-        //Lo movemos si disparada es true y si bola broly existe
-        if (disparada && bolaBroly != null)
+        //Lo movemos si disparada es true y si bola turles existe
+        if (disparada && bolaTurles != null)
         {
-            bolaBroly.transform.Translate(Vector2.left * velocidadIzquierda * Time.deltaTime);
+            bolaTurles.transform.Translate(Vector2.right * velocidadDerecha * Time.deltaTime);
         }
     }
 }

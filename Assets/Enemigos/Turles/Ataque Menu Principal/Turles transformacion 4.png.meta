@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4f45bf8e034ff1f4e971a9c84bf09e77
+guid: 55bfebfed7aae6f43a5be92611185eb0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 741987501235102330
-    second: Turles transformacion 11_0
+      213: -5405396384535862677
+    second: Turles transformacion 4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 18
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Turles transformacion 11_0
+      name: Turles transformacion 4_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 2
-        width: 41
-        height: 47
+        x: 0
+        y: 1
+        width: 31
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a72e5ee73b11c4a00800000000000000
-      internalID: 741987501235102330
+      spriteID: b622f8590ac2cf4b0800000000000000
+      internalID: -5405396384535862677
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Turles transformacion 11_0: 741987501235102330
+      Turles transformacion 4_0: -5405396384535862677
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
