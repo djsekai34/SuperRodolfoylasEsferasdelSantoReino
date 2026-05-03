@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
     public static int vidasTotales = 3;
     public static string ultimoNivel;
 
+    // Nueva variable para contar los enemigos en el Nivel Extra
+    public static int enemigosRestantes = 0;
+
     private static GameManager instancia;
 
     void Awake()
@@ -33,13 +36,19 @@ public class GameManager : MonoBehaviour
             //Guardamos el nivel actual en una variable estatica
             ultimoNivel = escena;
         }
+
+        // Si estamos en el nivel extra, contamos cuántos objetos con el tag "Enemy" quedan vivos
+        if (escena == "Nivel Extra")
+        {
+            enemigosRestantes = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        }
     }
 
     public static void RestarVida()
     {
         //Le quitamos una vida al contador
         vidasTotales--;
-        
+
         //Entramos al if si hemos pedido la escena
         if (vidasTotales <= 0)
         {
@@ -52,7 +61,7 @@ public class GameManager : MonoBehaviour
             {
                 SceneManager.LoadScene("MuerteSN");
             }
-            else if (escenaActual == "Jaen" || escenaActual == "Cazorla" || escenaActual == "Martos" || escenaActual == "Andujar" || escenaActual == "Ubeda" || escenaActual == "Torredonjimeno" || escenaActual == "AlcalaLaReal")
+            else if (escenaActual == "Jaen" || escenaActual == "Cazorla" || escenaActual == "Martos" || escenaActual == "Andujar" || escenaActual == "Ubeda" || escenaActual == "Torredonjimeno" || escenaActual == "AlcalaLaReal" || escenaActual == "Nivel Extra")
             {
                 SceneManager.LoadScene("Muerte");
             }
@@ -66,7 +75,7 @@ public class GameManager : MonoBehaviour
     {
         puntosTotales += cantidad;
     }
-    
+
     //Reseteamos los datos del juego
     public static void ResetearDatos()
     {

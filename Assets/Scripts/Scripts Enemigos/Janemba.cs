@@ -256,5 +256,8 @@ public class Janemba : MonoBehaviour
         // Paramos todo  y aseguramos la poscion por ultima vez
         anim.speed = 0;
         sr.transform.localPosition = posFinalHijo;
+
+        // Cambiamos el tag del enemigo a EnemigoMuerto para el tema del ultimo nivel
+        gameObject.tag = "EnemigoMuerto";
     }
 }

@@ -4674,9 +4674,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341050274df9e604bac27d73d9302e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreSiguienteNivel: Menu Principal
+  nombreSiguienteNivel: DeseoaShenlong
   tiempoParaCargar: 5
-  bolasNecesarias: 1
+  bolasNecesarias: 7
 --- !u!61 &1609342544
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -262,5 +262,8 @@ public class Turles : MonoBehaviour
         // Lo congelamos de forma definitiva
         anim.speed = 0;
         sr.transform.localPosition = posSueloF4;
+
+        // Cambiamos el tag del enemigo a EnemigoMuerto para el tema del ultimo nivel
+        gameObject.tag = "EnemigoMuerto";
     }
 }

@@ -5,8 +5,32 @@ public class ControladorBotones : MonoBehaviour
 {
     public void OnBotonHistoria()
     {
-        GameManager.ResetearDatos();
         SceneManager.LoadScene("Jaen");
+    }
+
+    public void OnBotonCinematicaFinal()
+    {
+        SceneManager.LoadScene("CinematicaFinal");
+    }
+
+    public void OnBotonCinematicaFinalMalo()
+    {
+        SceneManager.LoadScene("CinematicaFinalMalo");
+    }
+
+    public void OnBotonNivelExtra()
+    {
+        SceneManager.LoadScene("Nivel Extra");
+    }
+
+    public void OnBotonGracias()
+    {
+        SceneManager.LoadScene("Gracias");
+    }
+
+    public void OnBotonCinematicaInicial()
+    {
+        SceneManager.LoadScene("CinematicaInicial");
     }
 
     public void OnBotonSelectorNiveles()

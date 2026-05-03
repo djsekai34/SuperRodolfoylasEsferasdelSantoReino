@@ -203,6 +203,7 @@ public class Broly : MonoBehaviour
 
     IEnumerator EfectoEstatua()
     {
+
         //Buscamos el sprite de broly y si hubiera algun error cortamos ahi todo
         SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
         if (sr == null) yield break;
@@ -252,5 +253,8 @@ public class Broly : MonoBehaviour
             anim.Play("BrolyMuere", 0, 1.0f);
             anim.speed = 0;
         }
+
+        // Cambiamos el tag del enemigo a EnemigoMuerto para el tema del ultimo nivel
+        gameObject.tag = "EnemigoMuerto";
     }
 }

@@ -3220,7 +3220,7 @@ GameObject:
   - component: {fileID: 1530311014}
   m_Layer: 0
   m_Name: Gohan
-  m_TagString: GokuVida
+  m_TagString: GohanVida
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3408,7 +3408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagJugador: Player
-  tagGoku: GokuVida
+  tagAliados: GohanVida
 --- !u!4 &1530311018
 Transform:
   m_ObjectHideFlags: 0

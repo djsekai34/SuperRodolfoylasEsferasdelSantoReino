@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Escenas de menus etc/SelectorNivel.unity
     guid: cd76d4634830e47409bb7699712eac4d
   - enabled: 1
+    path: Assets/Scenes/Cinematicas/CinematicaInicial.unity
+    guid: 5cb92237d870e6c49839327accdd70ec
+  - enabled: 1
     path: Assets/Scenes/Escenas Historia/Jaen.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
@@ -33,6 +36,24 @@ EditorBuildSettings:
     path: Assets/Scenes/Escenas Historia/AlcalaLaReal.unity
     guid: c9bc9ffaf59ecd647954b7f604dbac1a
   - enabled: 1
+    path: Assets/Scenes/Escenas Historia/Nivel Extra.unity
+    guid: f2664065cf3623944bb3e64959c43437
+  - enabled: 1
+    path: Assets/Scenes/Cinematicas/DeseoaShenlong.unity
+    guid: 58699d0284b2cd341b606f0f6baa86ed
+  - enabled: 1
+    path: Assets/Scenes/Cinematicas/CinematicaFinal.unity
+    guid: 0035719deae4bd449a79db1334ccce1a
+  - enabled: 1
+    path: Assets/Scenes/Cinematicas/CinematicaFinalExtra.unity
+    guid: 8ebc9ff33e655644db3c2d33880a0514
+  - enabled: 1
+    path: Assets/Scenes/Cinematicas/CinematicaFinalMalo.unity
+    guid: 5c4285e28c80ba14ab98a8423f7975e2
+  - enabled: 1
+    path: Assets/Scenes/Cinematicas/Gracias.unity
+    guid: 06addf24e9b696a439cfa1035cf2abfd
+  - enabled: 1
     path: Assets/Scenes/Escena SN/JaenSN.unity
     guid: 0726d7cc84d0bf9419c48f424d00df2e
   - enabled: 1
@@ -43,7 +64,7 @@ EditorBuildSettings:
     guid: 79fa4c2a5edebc74d9d57eac4c446c09
   - enabled: 1
     path: Assets/Scenes/Escena SN/AndujarSN.unity
-    guid: 481a22f8d46e1e84fab88a797573484c
+    guid: 1763e45558632e245aff0537aed2779e
   - enabled: 1
     path: Assets/Scenes/Escena SN/UbedaSN.unity
     guid: 7192a7e05deb782428b137408fbe17e6

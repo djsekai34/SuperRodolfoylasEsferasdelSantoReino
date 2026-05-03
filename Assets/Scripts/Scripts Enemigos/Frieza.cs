@@ -221,5 +221,8 @@ public class Frieza : MonoBehaviour
         // Lo dejamos todo congelado
         anim.speed = 0;
         sr.transform.localPosition = posFinalSueloF4;
+
+        // Cambiamos el tag del enemigo a EnemigoMuerto para el tema del ultimo nivel
+        gameObject.tag = "EnemigoMuerto";
     }
 }

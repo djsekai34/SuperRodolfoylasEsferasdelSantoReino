@@ -301,5 +301,8 @@ public class Kefla : MonoBehaviour
         // Aseguramos la posicion del sprite y lo congelamos
         sr.transform.localPosition = posFinalHijo;
         if (anim != null) anim.speed = 0;
+
+        // Cambiamos el tag del enemigo a EnemigoMuerto para el tema del ultimo nivel
+        gameObject.tag = "EnemigoMuerto";
     }
 }

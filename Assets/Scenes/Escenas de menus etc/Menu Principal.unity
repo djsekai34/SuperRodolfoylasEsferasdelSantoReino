@@ -739,12 +739,12 @@ GameObject:
   - component: {fileID: 503025683}
   - component: {fileID: 503025682}
   m_Layer: 5
-  m_Name: Goku (2)
+  m_Name: Vegeta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &503025681
 RectTransform:
   m_ObjectHideFlags: 0
@@ -774,7 +774,7 @@ Animator:
   m_GameObject: {fileID: 503025680}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7f7eae11255bb204d86171ba476d4860, type: 2}
+  m_Controller: {fileID: 9100000, guid: 281b9e4f5c62fcb49b98b2a9290466c4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -806,7 +806,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1707083762607439166, guid: 3a12af038afa746448fc8c6649683277, type: 3}
+  m_Sprite: {fileID: -2483535455966294586, guid: 2df854bd52a062840a4d1fcd6ea668ca, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1716,7 +1716,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 174580140}
         m_TargetAssemblyTypeName: ControladorBotones, Assembly-CSharp
-        m_MethodName: OnBotonHistoria
+        m_MethodName: OnBotonCinematicaInicial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

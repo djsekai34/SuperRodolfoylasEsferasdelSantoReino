@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,16 +12,21 @@ public class MusicManager : MonoBehaviour
     public AudioClip musicaMenus;
     public AudioClip musicaNivelJaen;
     public AudioClip musicaNivelCazorla;
-    public AudioClip musicaNivelMartos; 
+    public AudioClip musicaNivelMartos;
     public AudioClip musicaNivelAndujar;
     public AudioClip musicaNivelUbeda;
     public AudioClip musicaNivelTorredonjimeno;
     public AudioClip musicaNivelAlcalaLaReal;
+    public AudioClip musicaNivelExtra;
     public AudioClip musicaPausa;
     public AudioClip musicaMuerte;
+    public AudioClip cinematicaInicial;
+    public AudioClip cinematicaShenlong;
+    public AudioClip cinematicaFinalyFinalExtra;
+    public AudioClip cinematicaFinalMalo;
+    public AudioClip graciasporjugar;
 
     private float tiempoGuardadoNivel = 0f;
-    // Variable nueva para recordar qué canción estaba sonando antes de la pausa
     private AudioClip clipActualNivel;
 
     private void Awake()
@@ -48,6 +55,9 @@ public class MusicManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        // Por defecto, devolvemos el volumen al máximo si no es la cinemática
+        audioSource.volume = 1f;
+
         // Dependiendo de que pantalla estemos ponemos una musica u otra
         if (scene.name == "Menu Principal" || scene.name == "Creditos" || scene.name == "SelectorNivel" || scene.name == "Controles")
         {
@@ -61,10 +71,10 @@ public class MusicManager : MonoBehaviour
         }
         else if (scene.name == "Cazorla" || scene.name == "CazorlaSN")
         {
-            clipActualNivel = musicaNivelCazorla; 
+            clipActualNivel = musicaNivelCazorla;
             CambiarClip(musicaNivelCazorla);
         }
-        else if (scene.name == "Martos" || scene.name == "MartosSN") 
+        else if (scene.name == "Martos" || scene.name == "MartosSN")
         {
             clipActualNivel = musicaNivelMartos;
             CambiarClip(musicaNivelMartos);
@@ -89,10 +99,49 @@ public class MusicManager : MonoBehaviour
             clipActualNivel = musicaNivelAlcalaLaReal;
             CambiarClip(musicaNivelAlcalaLaReal);
         }
+        else if (scene.name == "Nivel Extra")
+        {
+            audioSource.volume = 0.7f;
+            clipActualNivel = musicaNivelExtra;
+            CambiarClip(musicaNivelExtra);
+        }
         else if (scene.name == "Muerte" || scene.name == "MuerteSN")
         {
             tiempoGuardadoNivel = 0f;
             CambiarClip(musicaMuerte);
+        }
+        else if (scene.name == "CinematicaInicial")
+        {
+            clipActualNivel = cinematicaInicial;
+            audioSource.volume = 0.45f; // Bajamos el volumen para la cinemática
+            tiempoGuardadoNivel = 0f;
+            CambiarClip(cinematicaInicial);
+        }
+        else if (scene.name == "DeseoaShenlong")
+        {
+            clipActualNivel = cinematicaShenlong;
+            audioSource.volume = 0.45f;
+            tiempoGuardadoNivel = 0f;
+            CambiarClip(cinematicaShenlong);
+        }
+        else if (scene.name == "CinematicaFinal" || scene.name == "CinematicaFinalExtra")
+        {
+            clipActualNivel = cinematicaFinalyFinalExtra;
+            audioSource.volume = 0.45f;
+            tiempoGuardadoNivel = 0f;
+            CambiarClip(cinematicaFinalyFinalExtra);
+        }
+        else if (scene.name == "CinematicaFinalMalo")
+        {
+            clipActualNivel = cinematicaFinalMalo;
+            audioSource.volume = 0.50f;
+            tiempoGuardadoNivel = 0f;
+            CambiarClip(cinematicaFinalMalo);
+        }
+        else if (scene.name == "Gracias")
+        {
+            clipActualNivel = graciasporjugar;
+            CambiarClip(graciasporjugar);
         }
     }
 
@@ -115,7 +164,7 @@ public class MusicManager : MonoBehaviour
         {
             audioSource.clip = clipActualNivel;
             audioSource.time = tiempoGuardadoNivel;
-            audioSource.loop = true; 
+            audioSource.loop = true;
             audioSource.Play();
         }
     }
@@ -125,7 +174,7 @@ public class MusicManager : MonoBehaviour
     {
         if (clip == null || audioSource.clip == clip) return;
         audioSource.clip = clip;
-        audioSource.loop = true; 
+        audioSource.loop = true;
         audioSource.Play();
     }
 

@@ -46,7 +46,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.45
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -150,5 +150,11 @@ MonoBehaviour:
   musicaNivelUbeda: {fileID: 8300000, guid: 145c77201ba4d9e4abcabe78f8f4834b, type: 3}
   musicaNivelTorredonjimeno: {fileID: 8300000, guid: ea504d071f085b64eb72fce5a2c04f90, type: 3}
   musicaNivelAlcalaLaReal: {fileID: 8300000, guid: 4ca80b373d33d8647aa70f8df23ec72f, type: 3}
+  musicaNivelExtra: {fileID: 8300000, guid: a4e872b30cd88c34b9b4838b0223875a, type: 3}
   musicaPausa: {fileID: 8300000, guid: 95d0b72f90bf0094da9b62966e3b302d, type: 3}
   musicaMuerte: {fileID: 8300000, guid: 7230b655796da8f4086ef5b4aafe798a, type: 3}
+  cinematicaInicial: {fileID: 8300000, guid: 847c4d788f1c9ca448b35526bd3cf9bf, type: 3}
+  cinematicaShenlong: {fileID: 8300000, guid: f9ac48f4617449646b70e020759c3225, type: 3}
+  cinematicaFinalyFinalExtra: {fileID: 8300000, guid: 8f3c3722c93bab74ea0360231da5f3d7, type: 3}
+  cinematicaFinalMalo: {fileID: 8300000, guid: 6c07ea85ebc108b478ec1d5b548d1cb7, type: 3}
+  graciasporjugar: {fileID: 8300000, guid: 64d43d6d6c9b76948a261d9882300fc2, type: 3}

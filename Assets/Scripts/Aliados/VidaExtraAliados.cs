@@ -4,7 +4,7 @@ public class VidaExtraAliados : MonoBehaviour
 {
     [Header("Ajustes de Tags")]
     public string tagJugador = "Player";
-    public string tagGoku = "GokuVida";
+    public string tagAliados = "GokuVida";
 
     private AudioSource miAltavoz;
     private SpriteRenderer miSprite;
@@ -21,7 +21,7 @@ public class VidaExtraAliados : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D otro)
     {
-        if (otro.CompareTag(tagGoku) || otro.CompareTag(tagJugador))
+        if (otro.CompareTag(tagAliados) || otro.CompareTag(tagJugador))
         {
             // 1. Lógica de juego
             GameManager.SumarVida();
