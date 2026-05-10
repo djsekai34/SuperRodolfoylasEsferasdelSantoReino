@@ -60,6 +60,7 @@ public class FinDeNivel : MonoBehaviour
     {
         cargando = true; //Condicion de seguridad para que solo se ejecute otra vez
         rodolfoEsInmortal = false; // Le quitamos la inmortalidad
+        GameManager.GuardarProgresoNivel(); // Llamamos al gamemanager para guardar bien las bolas cogidas
         SceneManager.LoadScene(nombreSiguienteNivel);
     }
 }

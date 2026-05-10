@@ -95,6 +95,7 @@ public class MenuPausa : MonoBehaviour
     public void ReiniciarNivel()
     {
         Time.timeScale = 1f;
+        GameManager.ResetearPuntosParaReiniciar();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

@@ -7,7 +7,10 @@ public class GameManager : MonoBehaviour
     public static int vidasTotales = 3;
     public static string ultimoNivel;
 
-    // Nueva variable para contar los enemigos en el Nivel Extra
+
+    private static int puntosSuelo = 0;
+    private static int vidasSuelo = 3;
+
     public static int enemigosRestantes = 0;
 
     private static GameManager instancia;
@@ -23,6 +26,22 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    // Este metodo lo llama el script FinDeNivel cuando el jugador vaya a pasar al siguiente nivel
+    public static void GuardarProgresoNivel()
+    {
+        // Guardamos la vidas actuales y las bolas cogidas actualmente
+        puntosSuelo = puntosTotales;
+        vidasSuelo = vidasTotales; // Guardamos las vidas que le quedan al ganar
+    }
+
+    // Este metodo lo llamara el boton reiniciar cuando le demos en el menu de pausa
+    public static void ResetearPuntosParaReiniciar()
+    {
+        // Si reiniciamos el nivel recuperamos la vidas y bolas cogidas que teniamos al entrar al nivel, dando igual lo que hayamos cogido en este momento
+        puntosTotales = puntosSuelo;
+        vidasTotales = vidasSuelo; 
     }
 
     void Update()
@@ -79,8 +98,10 @@ public class GameManager : MonoBehaviour
     //Reseteamos los datos del juego
     public static void ResetearDatos()
     {
-        puntosTotales = 0;
-        vidasTotales = 3;
+        puntosTotales = 0; // Resetamos la vida que lleva encima en ese momento
+        vidasTotales = 3; // Le damos la tope de Vida a Rodolfo que son 3
+        puntosSuelo = 0; // Limpiamos las bolas cogidas, lo ponemos a 0 porque si viene de una partida anterior no se acumulen
+        vidasSuelo = 3; // Limpiamos la vida de Rodolfo, para que siempre sea su salud incial 3 ya sea que venimos de una partida anterior o reiniciamos en el nivel 1
     }
 
     public static void SumarVida()
