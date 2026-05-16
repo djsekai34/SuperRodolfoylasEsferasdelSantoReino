@@ -6,6 +6,7 @@ public class Cinemticainicio : MonoBehaviour
 {
     [Header("Configuración General")]
     public AudioSource altavoz;
+    public GameObject botonSaltarCinemantica;
 
     [Header("Fase 1")]
     public GameObject texto1;
@@ -27,11 +28,45 @@ public class Cinemticainicio : MonoBehaviour
     public AudioClip clip4;
     public GameObject botonFinal;
 
+    // Guardamos la referencia de la corrutina para poder pararla si saltamos
+    private Coroutine miCorrutina;
+
     void Start()
     {
         // Ejecutamos el codigo para ocultar todo si nos lo hemos dejado encendido y comprobamos que tengamos un audiosource y si esta todo okey lanzamos la corrutina
         OcultarTodo();
-        if (altavoz != null) StartCoroutine(CinematicaInicial());
+
+
+        // Comprobamos si venimos de darle click al boton al boton para saltar la cinematica
+        if (PlayerPrefs.GetInt("SaltarCinematicaActivo", 0) == 1)
+        {
+            // Limpiamos a 0 para que no se quede saltada para siempre y lo guardamos
+            PlayerPrefs.SetInt("SaltarCinematicaActivo", 0);
+            PlayerPrefs.Save();
+
+            // Mostramos todo y no reproducimos ningun audio (Menos el del gamemanager)
+            MostrarTodoDeGolpe();
+            return;
+        }
+
+        // Comprobamos si el jugador ya se ha pasado el modo historia
+        if (PlayerPrefs.GetInt("ModoHistoriaCompletado", 0) == 1)
+        {
+            // Si existe el boton y esta asigando
+            if (botonSaltarCinemantica)
+            {
+                // Lo mostramos y lanzamos la corrutina
+                botonSaltarCinemantica.SetActive(true);
+                StartCoroutine(OcultarBotonSaltarTrasTiempo(5f));
+            }
+        }
+        // Si no se ha pasado el modo historia no lo mostramos
+        else
+        {
+            if (botonSaltarCinemantica) botonSaltarCinemantica.SetActive(false);
+        }
+
+        if (altavoz != null) miCorrutina = StartCoroutine(CinematicaInicial());
     }
 
     // Ocultamos todo
@@ -56,21 +91,21 @@ public class Cinemticainicio : MonoBehaviour
         if (texto1) texto1.SetActive(true);
 
         // Esperamos unos segundos y si hay algun clip paramos todo y reproducimos el audio
-        yield return new WaitForSeconds(0.5f); 
+        yield return new WaitForSeconds(0.5f);
         if (clip1) { ReproducirSonido(clip1); yield return new WaitForSeconds(clip1.length); }
 
         // Vovlemos a esperar un poco y mostramos las 7 imagenes
         yield return new WaitForSeconds(0.8f);
         foreach (var img in imagenes7) if (img) img.SetActive(true);
-  
-        yield return new WaitForSeconds(1.5f); 
+
+        yield return new WaitForSeconds(1.5f);
 
         if (texto2) texto2.SetActive(true);
 
-        yield return new WaitForSeconds(0.5f); 
+        yield return new WaitForSeconds(0.5f);
         if (clip2) { ReproducirSonido(clip2); yield return new WaitForSeconds(clip2.length); }
 
-        yield return new WaitForSeconds(0.8f); 
+        yield return new WaitForSeconds(0.8f);
         foreach (var img in imagenes3) if (img) img.SetActive(true);
 
         yield return new WaitForSeconds(1.5f);
@@ -92,16 +127,40 @@ public class Cinemticainicio : MonoBehaviour
 
         yield return new WaitForSeconds(0.8f);
         if (botonFinal) botonFinal.SetActive(true);
+
+        if (botonSaltarCinemantica) botonSaltarCinemantica.SetActive(false);
     }
 
-    // Gestion del sonido
+    // Para reproducir los audios
     void ReproducirSonido(AudioClip clip)
     {
-        // Solo intentaremos repoducir un audio si hemos puesto el audiosource y el audio
         if (clip != null && altavoz != null)
         {
             altavoz.clip = clip;
             altavoz.Play();
         }
+    }
+
+    // Tenemos esta corrutina auxiliar para que cuando pase los x segundos pues se oculte
+    IEnumerator OcultarBotonSaltarTrasTiempo(float tiempo)
+    {
+        yield return new WaitForSeconds(tiempo);
+        if (botonSaltarCinemantica) botonSaltarCinemantica.SetActive(false);
+    }
+
+    // Metodo donde activamos toda la cinematica de golpe
+    void MostrarTodoDeGolpe()
+    {
+        if (texto1) texto1.SetActive(true);
+        if (texto2) texto2.SetActive(true);
+        if (texto3) texto3.SetActive(true);
+        if (texto4) texto4.SetActive(true);
+        if (rodolfo) rodolfo.SetActive(true);
+        if (botonFinal) botonFinal.SetActive(true);
+
+        foreach (var img in imagenes7) if (img) img.SetActive(true);
+        foreach (var img in imagenes3) if (img) img.SetActive(true);
+
+        if (botonSaltarCinemantica) botonSaltarCinemantica.SetActive(false);
     }
 }

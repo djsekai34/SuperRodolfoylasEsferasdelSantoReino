@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 6320479815836325400}
   - component: {fileID: 7784695624998646573}
   m_Layer: 5
-  m_Name: Reiniciar el nivel (1)
+  m_Name: Selector de nivel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

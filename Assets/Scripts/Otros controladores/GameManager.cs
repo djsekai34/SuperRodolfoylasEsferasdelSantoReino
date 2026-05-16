@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     {
         // Guardamos la vidas actuales y las bolas cogidas actualmente
         puntosSuelo = puntosTotales;
-        vidasSuelo = vidasTotales; // Guardamos las vidas que le quedan al ganar
+        vidasSuelo = vidasTotales; // Guardamos las vidas que le quedan al pasar de nivel
     }
 
     // Este metodo lo llamara el boton reiniciar cuando le demos en el menu de pausa
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
             ultimoNivel = escena;
         }
 
-        // Si estamos en el nivel extra, contamos cuántos objetos con el tag "Enemy" quedan vivos
+        // Si estamos en el nivel extra, contamos cuï¿½ntos objetos con el tag "Enemy" quedan vivos
         if (escena == "Nivel Extra")
         {
             enemigosRestantes = GameObject.FindGameObjectsWithTag("Enemy").Length;

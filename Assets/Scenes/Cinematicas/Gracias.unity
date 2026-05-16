@@ -638,7 +638,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 593557379}
         m_TargetAssemblyTypeName: ControladorBotones, Assembly-CSharp
-        m_MethodName: OnBotonVolverAlMenu
+        m_MethodName: OnBotonVolverAlMenuGracias
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

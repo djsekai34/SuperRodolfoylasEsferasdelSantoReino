@@ -7,7 +7,7 @@ public class MenuPausa : MonoBehaviour
     public GameObject panelPausa;
     public GameObject canvasHUD;
 
-    [Header("Configuración Cámara")]
+    [Header("Configuraciï¿½n Cï¿½mara")]
     public Camera camaraPrincipal;
 
     private bool juegoPausado = false;
@@ -46,7 +46,7 @@ public class MenuPausa : MonoBehaviour
 
     public void Pausar()
     {
-        // Marcamos que el juego está en pausa y activamos el menu
+        // Marcamos que el juego estï¿½ en pausa y activamos el menu
         juegoPausado = true;
         panelPausa.SetActive(true);
         //Escondemos el hud
@@ -91,7 +91,7 @@ public class MenuPausa : MonoBehaviour
         }
     }
 
-    //Reiniciamos el nivel donde estemos actualmente
+    //Reiniciamos el nivel donde estemos actualmente con los parametros que tengamos al entrar al nivel
     public void ReiniciarNivel()
     {
         Time.timeScale = 1f;

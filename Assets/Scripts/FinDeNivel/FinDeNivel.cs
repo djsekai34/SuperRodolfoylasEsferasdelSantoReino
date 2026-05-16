@@ -6,7 +6,7 @@ public class FinDeNivel : MonoBehaviour
     [Header("Ajustes del Nivel")]
     [SerializeField] private string nombreSiguienteNivel = "Martos";
     [SerializeField] private float tiempoParaCargar = 5f;
-    [SerializeField] private int bolasNecesarias = 2; // Variable para no repetir código manualmente
+    [SerializeField] private int bolasNecesarias = 2; // Variable para no repetir cï¿½digo manualmente
 
     public static bool rodolfoEsInmortal = false;
 

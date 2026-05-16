@@ -221,7 +221,7 @@ public class Janemba : MonoBehaviour
                 sr.transform.localPosition = Vector3.Lerp(posInicialHijo, posFrame3Hijo, pSuave);
 
                 // Bajamos la opacidad el enemigo
-                sr.color = Color.Lerp(new Color(1, 1, 1, 1), new Color(1, 1, 1, 0.3f), pCaida);
+                sr.color = Color.Lerp(new Color(1, 1, 1, 1), new Color(1, 1, 1, 0.9f), pCaida);
             }
 
             // Sincronizamos la animacion para recorra desde el primer frame hasta el 3
@@ -231,7 +231,7 @@ public class Janemba : MonoBehaviour
 
         // Formzamos que el sprite se quede en la poscion del frame 3, le bajamos las transparencia y congelamos la animacion
         sr.transform.localPosition = posFrame3Hijo;
-        sr.color = new Color(1, 1, 1, 0.2f);
+        sr.color = new Color(1, 1, 1, 0.8f);
         anim.Play("JanembaMuere", 0, 0.66f);
 
         // Cambiamos su collider a trigger para que sea atravesado
@@ -245,7 +245,7 @@ public class Janemba : MonoBehaviour
         sr.transform.localPosition = posFinalHijo;
 
         // Dejamos la transparencia final
-        sr.color = new Color(1, 1, 1, 0.3f);
+        sr.color = new Color(1, 1, 1, 0.6f);
 
         // Saltamos al ultimo frame
         anim.Play("JanembaMuere", 0, 1.0f);

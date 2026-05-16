@@ -143,6 +143,14 @@ public class Frieza : MonoBehaviour
         Collider2D col = GetComponent<Collider2D>();
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
 
+        // Hacemos su collider trigger y congelamos sus fisicas para que Rodolfo lo pueda atravesar
+        if (col != null) col.isTrigger = true;
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.bodyType = RigidbodyType2D.Kinematic; 
+        }
+
         // Si no tenemos el animador o el sprite lo cancelamos para evitar errores
         if (anim == null || sr == null) yield break;
 

@@ -19,7 +19,6 @@ public class Rodolfo : MonoBehaviour
     private SpriteRenderer spriteJugador;
     private Animator animacion;
     private AudioSource audioSource;
-    public AudioClip saltoSfx;
 
     private float inputHorizontal;
 
@@ -76,26 +75,38 @@ public class Rodolfo : MonoBehaviour
                 //Si le hemos dado al shift usamos el salto ponente si no el normal y le damos un empujon con el vector 2 y la fuerza que pusimos
                 float fuerzaFinal = estaCorriendo ? fuerzaSaltoShift : fuerzaSalto;
                 fisicasJugador.AddForce(Vector2.up * fuerzaFinal, ForceMode2D.Impulse);
-
-                //Reproducimos el sonido de salto solo 1 vez
-                if (animacion != null) animacion.Play("RodolfoSalta");
-                if (audioSource != null && saltoSfx != null) audioSource.PlayOneShot(saltoSfx);
             }
         }
-        //Para girar el sprite
-        if (fisicasJugador != null)
+        //Para girar el sprite y posicionar la camara
+        if (inputHorizontal < -0.01f)
         {
-            if (fisicasJugador.linearVelocity.x < -0.1f) spriteJugador.flipX = true;
-            else if (fisicasJugador.linearVelocity.x > 0.1f) spriteJugador.flipX = false;
+            spriteJugador.flipX = true;
+
+            // Si vamos a la izquierda posicionamos la camara para que se vea a la izquierda
+            if (Camera.main != null)
+            {
+                Camera.main.transform.localPosition = new Vector3(-6.1f, 2.91f, -10f);
+            }
         }
+        else if (inputHorizontal > 0.01f)
+        {
+            spriteJugador.flipX = false;
+
+            // Si vamos a la derecha volvemos a nuestra posicion original
+            if (Camera.main != null)
+            {
+                Camera.main.transform.localPosition = new Vector3(6.599998f, 2.91f, -10f);
+            }
+        }
+
         //Actualizamos el estado de las animaciones
         AnimarJugador();
     }
 
     public void TomarDano()
     {
-        // Hacemos a Rodolfo inmortal si esta haciendo su ataque o ha recibido daño
-        if (esInmortal || estaAtacando) return;
+        // Hacemos a Rodolfo inmortal si esta haciendo su ataque o ha recibido daño o esta en el final del nivel
+        if (esInmortal || estaAtacando || FinDeNivel.rodolfoEsInmortal) return;
 
         //Llamamos al metodo restar vida del game manager para restar la vida y iniciamos la corutina de ser inmortal 
         GameManager.RestarVida();

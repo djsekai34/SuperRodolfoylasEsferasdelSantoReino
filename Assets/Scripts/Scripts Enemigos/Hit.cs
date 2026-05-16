@@ -217,7 +217,7 @@ public class Hit : MonoBehaviour
             sr.transform.localPosition = posOriginalHijo;
 
             // Le vamos bajando un poco las transparencia
-            sr.color = Color.Lerp(new Color(1, 1, 1, 1), new Color(1, 1, 1, 0.3f), progreso);
+            sr.color = Color.Lerp(new Color(1, 1, 1, 1), new Color(1, 1, 1, 0.9f), progreso);
 
             // Reproducimos la animacion hasta el 3 frame que es un 66%
             anim.Play(nombreAnimMorir, 0, progreso * 0.66f);
@@ -226,7 +226,7 @@ public class Hit : MonoBehaviour
 
         // Paramos la poscion y le damos un poco de tranasprencia
         sr.transform.localPosition = posOriginalHijo;
-        sr.color = new Color(1, 1, 1, 0.2f);
+        sr.color = new Color(1, 1, 1, 0.8f);
         anim.Play(nombreAnimMorir, 0, 0.66f);
 
         // Ponemos el collider trigger para que se pueda atravesar
@@ -240,7 +240,7 @@ public class Hit : MonoBehaviour
         sr.transform.localPosition = posFinalHijo;
 
         // Se vuelve ya fantasma
-        sr.color = new Color(1, 1, 1, 0.3f);
+        sr.color = new Color(1, 1, 1, 0.6f);
 
         // Saltamos al ultimo frame
         anim.Play(nombreAnimMorir, 0, 1.0f);

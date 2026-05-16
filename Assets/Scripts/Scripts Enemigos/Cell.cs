@@ -232,7 +232,7 @@ public class Cell : MonoBehaviour
             }
 
             // Se va volviendo transparente
-            sr.color = Color.Lerp(new Color(1, 1, 1, 1), new Color(1, 1, 1, 0.3f), progreso);
+            sr.color = Color.Lerp(new Color(1, 1, 1, 1), new Color(1, 1, 1, 0.8f), progreso);
 
             // Volvemos a sincronizar el frame de la animacion con el tiempo que ha transcurrido y no salimos
             anim.Play(nombreAnimMorir, 0, progreso);
@@ -241,7 +241,7 @@ public class Cell : MonoBehaviour
 
         // Forzamos la posición final y el ultimo frame de la animación por seguridad
         sr.transform.localPosition = posSueloFinal;
-        sr.color = new Color(1, 1, 1, 0.2f);
+        sr.color = new Color(1, 1, 1, 0.6f);
         anim.Play(nombreAnimMorir, 0, 1f);
 
         // Ponemos el collider trigger para que se pueda atravesar

@@ -5,6 +5,7 @@ public class ControladorBotones : MonoBehaviour
 {
     public void OnBotonHistoria()
     {
+        GameManager.ResetearDatos();
         SceneManager.LoadScene("Jaen");
     }
 
@@ -59,6 +60,14 @@ public class ControladorBotones : MonoBehaviour
         SceneManager.LoadScene("Menu Principal");
     }
 
+    public void OnBotonVolverAlMenuGracias()
+    {
+        // Guardamos en el disco duro que el jugador ya se ha pasado el juego
+        PlayerPrefs.SetInt("ModoHistoriaCompletado", 1);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("Menu Principal");
+    }
+
     public void OnBotonReiniciarNivel()
     {
         //Descongelamos el nivel y miramos qque pantalla de muerte estamos actualmente 
@@ -73,8 +82,8 @@ public class ControladorBotones : MonoBehaviour
         }
         else
         {
-            // Si es nivel de modo historia solo le devolvemos las vidas
-            GameManager.vidasTotales = 3;
+            // Si es nivel de modo historia lo reiniciamos con las vidas que tenia
+            GameManager.ResetearPuntosParaReiniciar();
         }
 
         // Si tenemos un nivel guardado en el game manager lo cargamos si no al menu principal
@@ -86,5 +95,15 @@ public class ControladorBotones : MonoBehaviour
         {
             SceneManager.LoadScene("Menu Principal");
         }
+    }
+
+    public void OnBotonSaltarYMostrarCinematica(string nombreCinematica)
+    {
+        // Guardamos en el disco de inmediato que queremos saltar la secuencia
+        PlayerPrefs.SetInt("SaltarCinematicaActivo", 1);
+        PlayerPrefs.Save();
+
+        // Cargamos la escena de la cinemática que le pasemos por el parámetro
+        SceneManager.LoadScene(nombreCinematica);
     }
 }
