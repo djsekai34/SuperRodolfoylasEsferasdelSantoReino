@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Escenas de menus etc/SelectorNivel.unity
     guid: cd76d4634830e47409bb7699712eac4d
   - enabled: 1
+    path: Assets/Scenes/Escenas de menus etc/SelectorNivelPass.unity
+    guid: c6b2dfee4c6cbb04599df430c636e4a2
+  - enabled: 1
     path: Assets/Scenes/Cinematicas/CinematicaInicial.unity
     guid: 5cb92237d870e6c49839327accdd70ec
   - enabled: 1
@@ -74,6 +77,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Escena SN/AlcalaLaRealSN.unity
     guid: 64cb26a4c48cad140b1a787cd38ecf42
+  - enabled: 1
+    path: Assets/Scenes/Escena SN/Nivel ExtraSN.unity
+    guid: 279987dca95bd8d46bff387784972af8
   - enabled: 1
     path: Assets/Scenes/Escenas de menus etc/Creditos.unity
     guid: 3c3b52c5d1ebab8448abf6bb6f8c4d07

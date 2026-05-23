@@ -5,7 +5,7 @@ public class Transformacionfreezermenu : MonoBehaviour
 {
     private Animator anim;
     public string nombreAnimacion = "TransformacionFreezerMenuPrincipal";
-    public float pausaFinal = 1.0f; //Tiempo que vamnos a congelar a freezer en el ultimo frame
+    public float pausaFinal = 1.0f; 
 
     //Obtenemos el animator y si existe lanzamos la corrutina que lo gestione
     void Start()

@@ -59,7 +59,7 @@ public class MusicManager : MonoBehaviour
         audioSource.volume = 1f;
 
         // Dependiendo de que pantalla estemos ponemos una musica u otra
-        if (scene.name == "Menu Principal" || scene.name == "Creditos" || scene.name == "SelectorNivel" || scene.name == "Controles")
+        if (scene.name == "Menu Principal" || scene.name == "Creditos" || scene.name == "SelectorNivel" || scene.name == "SelectorNivelPass" || scene.name == "Controles")
         {
             tiempoGuardadoNivel = 0f; //Reseteamos el contador de la musica
             CambiarClip(musicaMenus);
@@ -99,7 +99,7 @@ public class MusicManager : MonoBehaviour
             clipActualNivel = musicaNivelAlcalaLaReal;
             CambiarClip(musicaNivelAlcalaLaReal);
         }
-        else if (scene.name == "Nivel Extra")
+        else if (scene.name == "Nivel Extra" || scene.name == "Nivel ExtraSN")
         {
             audioSource.volume = 0.7f;
             clipActualNivel = musicaNivelExtra;

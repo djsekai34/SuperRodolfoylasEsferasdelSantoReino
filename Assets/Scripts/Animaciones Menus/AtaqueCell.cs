@@ -32,7 +32,7 @@ public class AtaqueCell : MonoBehaviour
                 bolaCell = hijo.gameObject;
                 // Guardamos quien es el padre y esto sirve para que cuando disparemos sea a quien tiene que volver
                 padreOriginalBola = transform;
-                // Si lo encontramos, paramos el bucle.
+                // Guardamos la posicion exacta en coordenadas locales para saber el punto exacto donde debera aparecer cuando se lance
                 posicionOriginalBola = bolaCell.transform.localPosition;
                 break;
             }

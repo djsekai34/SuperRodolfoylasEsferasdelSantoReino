@@ -44,8 +44,7 @@ public class TransformacionKeflamenu : MonoBehaviour
             // Mientras hayamos reproducido menos del 97% de la animacion ...
             while (cronometro < duracionTotal * 0.97f)
             {
-                // Sumamos el tiempo real desde el ultimo frame y calculamos el progreso de la animacion en un rango de 0 a 1
-                // Ejemplo: Si llevamos 1.5s de una animación de 3s, el progreso es 0.5 (50%).
+                // Sumamso el tiempo real desde el utlimo frame a un rango de 0 a 1, si llevamos por ejemplo 1,5s en una animacion de 3s internamente tendra un progreso de 0.5
                 cronometro += Time.unscaledDeltaTime;
                 float progreso = Mathf.Clamp01(cronometro / duracionTotal);
 

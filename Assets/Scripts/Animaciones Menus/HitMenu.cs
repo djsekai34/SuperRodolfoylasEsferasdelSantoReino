@@ -64,7 +64,6 @@ public class HitMenu : MonoBehaviour
             {
                 transform.localScale = new Vector3(-escalaOriginalX, transform.localScale.y, transform.localScale.z);
             }
-            // Si vamos hacia el punto A (izquierda), usamos la escala original tal cual
             // Si vamos al punto A que sera la izquierda vamos respetando la escala original
             else
             {

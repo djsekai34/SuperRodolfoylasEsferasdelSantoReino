@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cinemticainicio : MonoBehaviour
+public class Cinematicainicio : MonoBehaviour
 {
     [Header("Configuración General")]
     public AudioSource altavoz;

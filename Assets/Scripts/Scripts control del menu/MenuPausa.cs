@@ -7,7 +7,7 @@ public class MenuPausa : MonoBehaviour
     public GameObject panelPausa;
     public GameObject canvasHUD;
 
-    [Header("Configuraci�n C�mara")]
+    [Header("Configuracion Camara")]
     public Camera camaraPrincipal;
 
     private bool juegoPausado = false;

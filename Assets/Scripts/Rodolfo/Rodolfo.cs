@@ -12,7 +12,7 @@ public class Rodolfo : MonoBehaviour
     [Header("Ataque Rodolfo")]
     public GameObject bolaPrefab;
     public Transform puntoDisparo;
-    public AudioClip ataqueSfx; // Nuevo clip para el audio del ataque
+    public AudioClip ataqueSfx; 
     private bool estaAtacando = false;
 
     private Rigidbody2D fisicasJugador;

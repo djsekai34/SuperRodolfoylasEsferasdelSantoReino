@@ -18,10 +18,6 @@ public class Broly : MonoBehaviour
     public GameObject Bola_Broly;
     public float cadenciaRafaga = 0.5f;
 
-    // Ajustamos este valor. Si la animación dura 55s, el frame 5 está muy al principio.
-    // Si lo que quieres es el FINAL de la animación, 0.95f está bien.
-   // private float progresoFrame5 = 0.95f;
-
     private Vector3 posicionInicial;
     private Vector3 objetivoActual;
     private Animator anim;

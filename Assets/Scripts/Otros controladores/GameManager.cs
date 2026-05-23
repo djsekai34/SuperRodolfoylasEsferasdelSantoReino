@@ -28,6 +28,31 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Nos suscribimos al evento que carga la escena para qie acrive el script
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += AlCargarEscena;
+    }
+
+    // Nos desuscribimos al destruirse para evitar problemas
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= AlCargarEscena;
+    }
+
+    // Este metodo se va a ejcutar cada vez que cambiemos de escena
+    private void AlCargarEscena(Scene escena, LoadSceneMode modo)
+    {
+        // Si llegamos al nivel extra, le damos una vida al jugador por el regalito y actualizamos el suelo de las vidas para que, si reinicia el nivel desde la pausa, conserve este regalo.
+        if (escena.name == "Nivel Extra" || escena.name == "Nivel ExtraSN")
+        {
+            SumarVida();
+            // Si no actualizamos el suelo, al reiniciar el nivel desde la pausa, el jugador perdería esta vida extra que ha ganado al entrar al nivel extra, lo cual no sería justo.
+            vidasSuelo = vidasTotales;
+
+        }
+    }
+
     // Este metodo lo llama el script FinDeNivel cuando el jugador vaya a pasar al siguiente nivel
     public static void GuardarProgresoNivel()
     {
@@ -57,7 +82,7 @@ public class GameManager : MonoBehaviour
         }
 
         // Si estamos en el nivel extra, contamos cu�ntos objetos con el tag "Enemy" quedan vivos
-        if (escena == "Nivel Extra")
+        if (escena == "Nivel Extra" || escena == "Nivel ExtraSN")
         {
             enemigosRestantes = GameObject.FindGameObjectsWithTag("Enemy").Length;
         }
@@ -76,7 +101,7 @@ public class GameManager : MonoBehaviour
             string escenaActual = SceneManager.GetActiveScene().name;
 
             // Dependiendo de que nivel estemos jugando mandamos al jugador a una pantalla de muerte u otra
-            if (escenaActual == "JaenSN" || escenaActual == "CazorlaSN" || escenaActual == "MartosSN" || escenaActual == "AndujarSN" || escenaActual == "UbedaSN" || escenaActual == "TorredonjimenoSN" || escenaActual == "AlcalaLaRealSN")
+            if (escenaActual == "JaenSN" || escenaActual == "CazorlaSN" || escenaActual == "MartosSN" || escenaActual == "AndujarSN" || escenaActual == "UbedaSN" || escenaActual == "TorredonjimenoSN" || escenaActual == "AlcalaLaRealSN" || escenaActual == "Nivel ExtraSN")
             {
                 SceneManager.LoadScene("MuerteSN");
             }

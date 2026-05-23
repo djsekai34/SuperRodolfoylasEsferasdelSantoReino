@@ -7,7 +7,6 @@ public class FinDeNivelSN : MonoBehaviour
     public string nombreSiguienteNivel = "SelectorNivel";
     public float tiempoParaCargar = 5f;
 
-    // Estático para que el script de salud de Rodolfo pueda leerlo fácilmente
     public static bool rodolfoEsInmortal = false;
 
     private float cronometro = 0f;
@@ -16,21 +15,26 @@ public class FinDeNivelSN : MonoBehaviour
 
     void Update()
     {
+        // Si Rodolfo esta encima y ha obtenido la bola magica y no se ha cargado la siguiente escena
         if (rodolfoEstaEncima && GameManager.puntosTotales >= 1 && !cargando)
         {
+            // Vamos sumando el tiempo real
             cronometro += Time.deltaTime;
 
+            // Si el tiempo real ha superado o igualado al tiempo que hemos establecido nos vamos a la siguiente escena
             if (cronometro >= tiempoParaCargar)
             {
                 CargarSiguienteEscena();
             }
         }
+        // En el caso que nos salgamos resteamos el contador
         else
         {
             cronometro = 0f;
         }
     }
 
+    // Si Rodolfo esta dentro lo hacemos inmortal y informamos que esta dentro
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -39,7 +43,7 @@ public class FinDeNivelSN : MonoBehaviour
             rodolfoEsInmortal = true;
         }
     }
-
+    // Si Rodolfo esta fuera pues ya no es inmortal informamos que no esta dentro y no cargamos nada
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -50,6 +54,7 @@ public class FinDeNivelSN : MonoBehaviour
         }
     }
 
+    // Cambiamos la variable de cargar la escena a true, permitimos el poder cargar le quitamos la inmortalidad y no la llevamos a la siguiente escena
     void CargarSiguienteEscena()
     {
         cargando = true;

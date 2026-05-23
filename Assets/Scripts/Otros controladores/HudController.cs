@@ -17,7 +17,7 @@ public class HudController : MonoBehaviour
             textoVidas.text = "Vidas: " + GameManager.vidasTotales;
 
         // Si estamos en el nivel extra en vez de mostrar las bolas mostramos los enemigos
-        if (SceneManager.GetActiveScene().name == "Nivel Extra")
+        if (SceneManager.GetActiveScene().name == "Nivel Extra" || SceneManager.GetActiveScene().name == "Nivel ExtraSN")
         {
             // Si existe el textoBolasMagicas cambiamos su texto a enemigos y los enemigos restates que quede que nos dara el gamemanager
             if (textoBolasMagicas != null)

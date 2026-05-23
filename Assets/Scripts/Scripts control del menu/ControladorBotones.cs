@@ -36,7 +36,18 @@ public class ControladorBotones : MonoBehaviour
 
     public void OnBotonSelectorNiveles()
     {
-        SceneManager.LoadScene("SelectorNivel");
+        // Buscamos el registro de windows en el que guardamos si el jugador se ha pasado el modo historia o no
+        int historiaCompletada = PlayerPrefs.GetInt("ModoHistoriaCompletado", 0);
+
+        // Si nos hemos pasado el modo historia, al selector con el nivel extra desbloqueado, si no al selector sin el nivel extra
+        if (historiaCompletada == 1)
+        {
+            SceneManager.LoadScene("SelectorNivelPass");
+        }
+        else
+        {
+            SceneManager.LoadScene("SelectorNivel");
+        }
     }
 
     public void OnBotonCreditos()

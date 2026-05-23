@@ -4,7 +4,6 @@ public class VidaExtraAliados : MonoBehaviour
 {
     [Header("Ajustes de Tags")]
     public string tagJugador = "Player";
-    public string tagAliados = "GokuVida";
 
     private AudioSource miAltavoz;
     private SpriteRenderer miSprite;
@@ -12,36 +11,34 @@ public class VidaExtraAliados : MonoBehaviour
 
     private void Awake()
     {
-        // Ahora que todo está en el mismo sitio, lo pillamos directamente
+        // Cogemso el componete del audio, el sprite y el collider
         miAltavoz = GetComponent<AudioSource>();
-        // Si el SpriteRenderer sigue en el hijo, usamos Children, si lo subiste, quita el Children
         miSprite = GetComponentInChildren<SpriteRenderer>();
         miCollider = GetComponent<Collider2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D otro)
     {
-        if (otro.CompareTag(tagAliados) || otro.CompareTag(tagJugador))
+        // Si lo que le ha tocado ha sido algo que contenga el tag asigando
+        if (otro.CompareTag(tagJugador))
         {
-            // 1. Lógica de juego
+            // Llamamos al gamenanager para que nos sube la vida
             GameManager.SumarVida();
 
-            // 2. Lógica de audio
+            // Si tenemos el altavoz asigando y el clip asignado
             if (miAltavoz != null && miAltavoz.clip != null)
             {
+                // Reproducimos el audio asignado y apagamos visualemtne tanto el sprite como el collider
                 miAltavoz.Play();
-
-                // 3. ¡DESAPARECER!
-                // Apagamos el visual (hijo o padre) y el choque (padre)
                 if (miSprite != null) miSprite.enabled = false;
                 if (miCollider != null) miCollider.enabled = false;
 
-                // Destruimos el objeto entero cuando acabe el sonido
+                // Destruimos el objeto cuando se acabe el audio de reproducirse
                 Destroy(gameObject, miAltavoz.clip.length);
             }
             else
             {
-                // Si no hay audio, se va al instante
+                // Si por alguan casualidad no hay audio o altavoz solo lo destruimos y ya
                 Destroy(gameObject);
             }
         }
