@@ -30,6 +30,9 @@ public class Rodolfo : MonoBehaviour
     public float tiempoInmortal = 4f;
     private bool esInmortal = false;
 
+    [Header("Bola en cabeza")]
+    [SerializeField] private SpriteRenderer spriteCabeza;
+
     void Start()
     {
         fisicasJugador = GetComponent<Rigidbody2D>();
@@ -228,6 +231,20 @@ public class Rodolfo : MonoBehaviour
         {
             if (!animacion.GetCurrentAnimatorStateInfo(0).IsName("IdleRodolfo"))
                 animacion.Play("IdleRodolfo");
+        }
+    }
+
+    public void ActualizarBolaCabeza(Sprite nuevoSpriteBola)
+    {
+        if (spriteCabeza != null)
+        {
+            spriteCabeza.sprite = nuevoSpriteBola;
+
+            spriteCabeza.transform.localPosition = new Vector3(
+            spriteCabeza.transform.localPosition.x,
+            spriteCabeza.transform.localPosition.y,
+            spriteCabeza.transform.localPosition.z
+            );
         }
     }
 }

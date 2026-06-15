@@ -37,30 +37,34 @@ public class Cinematicainicio : MonoBehaviour
         OcultarTodo();
 
 
-        // Comprobamos si venimos de darle click al boton al boton para saltar la cinematica
-        if (PlayerPrefs.GetInt("SaltarCinematicaActivo", 0) == 1)
-        {
-            // Limpiamos a 0 para que no se quede saltada para siempre y lo guardamos
-            PlayerPrefs.SetInt("SaltarCinematicaActivo", 0);
-            PlayerPrefs.Save();
+        DatosJuego datos = SaveGame.Cargar();
 
-            // Mostramos todo y no reproducimos ningun audio (Menos el del gamemanager)
+        // Comprobamos si venimos de darle click al botón para saltar la cinemática
+        if (datos.saltarCinematicaActivo == 1)
+        {
+            // Limpiamos a 0 para que no salga el boton todo el rato
+            datos.saltarCinematicaActivo = 0;
+
+            // Guardamos el cambio de manera inmediata en el json
+            SaveGame.Guardar(datos);
+
+            // Mostramos todo
             MostrarTodoDeGolpe();
             return;
         }
 
         // Comprobamos si el jugador ya se ha pasado el modo historia
-        if (PlayerPrefs.GetInt("ModoHistoriaCompletado", 0) == 1)
+        if (datos.modoHistoriaCompletado == 1)
         {
-            // Si existe el boton y esta asigando
+            // Si existe el botón y está asignado
             if (botonSaltarCinemantica)
             {
-                // Lo mostramos y lanzamos la corrutina
+                // Lo mostramos y lanzamos la corrutina para que desaparezca a los 5 segundos
                 botonSaltarCinemantica.SetActive(true);
                 StartCoroutine(OcultarBotonSaltarTrasTiempo(5f));
             }
         }
-        // Si no se ha pasado el modo historia no lo mostramos
+        // Si no se ha pasado el modo historia, nos aseguramos de que el botón esté oculto
         else
         {
             if (botonSaltarCinemantica) botonSaltarCinemantica.SetActive(false);

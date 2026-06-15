@@ -36,11 +36,11 @@ public class ControladorBotones : MonoBehaviour
 
     public void OnBotonSelectorNiveles()
     {
-        // Buscamos el registro de windows en el que guardamos si el jugador se ha pasado el modo historia o no
-        int historiaCompletada = PlayerPrefs.GetInt("ModoHistoriaCompletado", 0);
+        // Buscamos en el json los datos
+        DatosJuego datos = SaveGame.Cargar();
 
         // Si nos hemos pasado el modo historia, al selector con el nivel extra desbloqueado, si no al selector sin el nivel extra
-        if (historiaCompletada == 1)
+        if (datos.modoHistoriaCompletado == 1)
         {
             SceneManager.LoadScene("SelectorNivelPass");
         }
@@ -73,9 +73,16 @@ public class ControladorBotones : MonoBehaviour
 
     public void OnBotonVolverAlMenuGracias()
     {
-        // Guardamos en el disco duro que el jugador ya se ha pasado el juego
-        PlayerPrefs.SetInt("ModoHistoriaCompletado", 1);
-        PlayerPrefs.Save();
+        // Leemos el estado de nuestro archivo en el disco duro
+        DatosJuego datosActuales = SaveGame.Cargar();
+
+        // Modificamos el dato que nos intersesa
+        datosActuales.modoHistoriaCompletado = 1;
+
+        // Sobreescribimos el json de nuevo
+        SaveGame.Guardar(datosActuales);
+
+        // Cargamos la escena
         SceneManager.LoadScene("Menu Principal");
     }
 
@@ -110,11 +117,16 @@ public class ControladorBotones : MonoBehaviour
 
     public void OnBotonSaltarYMostrarCinematica(string nombreCinematica)
     {
-        // Guardamos en el disco de inmediato que queremos saltar la secuencia
-        PlayerPrefs.SetInt("SaltarCinematicaActivo", 1);
-        PlayerPrefs.Save();
+        // Leemos el estado de nuestro archivo en el disco duro
+        DatosJuego datosActuales = SaveGame.Cargar();
 
-        // Cargamos la escena de la cinemática que le pasemos por el parámetro
+        // Modificamos el dato que nos intersesa
+        datosActuales.saltarCinematicaActivo = 1;
+
+        // Sobreescribimos el json de nuevo
+        SaveGame.Guardar(datosActuales);
+
+        // Cargamos la escena
         SceneManager.LoadScene(nombreCinematica);
     }
 }

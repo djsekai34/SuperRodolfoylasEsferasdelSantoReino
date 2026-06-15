@@ -9,6 +9,21 @@ public class BolasMagicas : MonoBehaviour
         // Detectamos si Rodolfo ha tocado la bola
         if (otro.CompareTag("Player"))
         {
+            // Cogemos el componente de Rodolfo
+            Rodolfo rodolfo = otro.GetComponent<Rodolfo>();
+
+            if (rodolfo != null)
+            {
+                // Cogemos el sprite de esta bola del escenario
+                SpriteRenderer miSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+                if (miSpriteRenderer != null)
+                {
+                    // Le mandamos al metodo de rodolfo la bola exacta
+                    rodolfo.ActualizarBolaCabeza(miSpriteRenderer.sprite);
+                }
+            }
+
             RecogerBola();
         }
     }
